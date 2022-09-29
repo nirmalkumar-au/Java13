@@ -1,5 +1,8 @@
 package com.nkcode;
 
+import com.nkcode.model.Employee;
+import com.nkcode.model.EmploymentType;
+
 import java.io.*;
 import java.math.BigDecimal;
 import java.text.NumberFormat;
@@ -14,7 +17,9 @@ public class Main {
 //        checkStringBuilder();
 //        checkNumberFormat();
 //        displayStringWithFormat();
-        checkTryCatchWithResources();
+//        checkTryCatchWithResources();
+        displayArrayOfEmployees();
+
     }
 
     private static void checkPrimitiveWrapper() {
@@ -132,4 +137,15 @@ public class Main {
         }
     }
 
+    public static void displayArrayOfEmployees() {
+        Employee[] employees = {
+                new Employee("John Davidson", "Williams Swift", 135, EmploymentType.FULL_TIME),
+                new Employee("Steve Brown", "Jacob Johnson", 1789, EmploymentType.PART_TIME)
+        };
+
+        for (Employee employee: employees
+             ) {
+            employee.displayEmployeeDetails();
+        }
+    }
 }
