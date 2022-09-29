@@ -6,7 +6,8 @@ public class Main {
     public static void main(String[] args) {
 //        checkPrimitiveWrapper();
 //        checkUnsignedWrapper();
-        checkBigDecimal();
+//        checkBigDecimal();
+        characterStringSwap();
     }
 
     private static void checkPrimitiveWrapper() {
@@ -48,6 +49,20 @@ public class Main {
         System.out.println("Double value in big value sum" + bigSum.doubleValue());
     }
 
+    public static void characterStringSwap() {
+        char[] arrChars = {'h', 'e', 'l', 'l', 'o'};
+        String strChars = String.valueOf(arrChars);
+
+        arrChars = strChars.toCharArray();
+        System.out.println("Char to String converted " + strChars);
+        System.out.print("String to Char converted ");
+        for (char aChar: arrChars
+             ) {
+            System.out.print('\'' );
+            System.out.print( aChar );
+            System.out.print( '\'');
+        }
+    }
 
 
 
