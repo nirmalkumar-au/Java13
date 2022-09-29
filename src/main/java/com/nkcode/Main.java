@@ -147,7 +147,7 @@ public class Main {
         }
     }
 
-    public static void displayArrayOfEmployees() {
+    private static void displayArrayOfEmployees() {
         Employee[] employees = {
                 new Employee("John Davidson", "Williams Swift", 135, EmploymentType.FULL_TIME),
                 new Employee("Steve Brown", "Jacob Johnson", 1789, EmploymentType.PART_TIME)
@@ -159,7 +159,7 @@ public class Main {
         }
     }
 
-    public static void displayListOfEmployees() {
+    private static void displayListOfEmployees() {
         List<Employee> employeeList = new ArrayList<>();
 
         employeeList.add( new Employee("John Davidson",
@@ -175,7 +175,7 @@ public class Main {
         employeeStream.forEach(Employee::displayEmployeeDetails);
     }
 
-    public static void displayMapOfEmployees() {
+    private static void displayMapOfEmployees() {
         Map<Integer, Employee> employeeMap = new HashMap<>();
 
         employeeMap.put( 135,
