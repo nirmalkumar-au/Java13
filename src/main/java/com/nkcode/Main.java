@@ -1,13 +1,17 @@
 package com.nkcode;
 
 import java.math.BigDecimal;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 public class Main {
     public static void main(String[] args) {
 //        checkPrimitiveWrapper();
 //        checkUnsignedWrapper();
 //        checkBigDecimal();
-        characterStringSwap();
+//        characterStringSwap();
+//        checkStringBuilder();
+        checkNumberFormat();
     }
 
     private static void checkPrimitiveWrapper() {
@@ -25,7 +29,7 @@ public class Main {
     }
 
     private static void checkUnsignedWrapper() {
-        String intValue = "300000000";
+        String intValue = "2147483647";
         Integer intUnsignedObj = Integer.parseUnsignedInt(intValue);
         System.out.println("Unsigned value " + intUnsignedObj);
 
@@ -49,7 +53,7 @@ public class Main {
         System.out.println("Double value in big value sum" + bigSum.doubleValue());
     }
 
-    public static void characterStringSwap() {
+    private static void characterStringSwap() {
         char[] arrChars = {'h', 'e', 'l', 'l', 'o'};
         String strChars = String.valueOf(arrChars);
 
@@ -64,6 +68,36 @@ public class Main {
         }
     }
 
+    private static void checkStringBuilder() {
+        StringBuffer strValue = new StringBuffer();
+        strValue.append("Class name is ")
+                .append(Main.class.getCanonicalName())
+                .append("\n Package name ")
+                .append(Main.class.getPackageName());
+        System.out.println(strValue);
+    }
 
+    private static void checkNumberFormat() {
+        var num = 3450.8999999f;
+        var locale = new Locale("de", "DE");
+        var numF = NumberFormat.getNumberInstance(locale);
+        var currencyF = NumberFormat.getCurrencyInstance(locale);
+        var percentF = NumberFormat.getPercentInstance(locale);
+        var compactF = NumberFormat.getCompactNumberInstance(locale, NumberFormat.Style.SHORT);
+
+        System.out.println("Number format " + numF.format(num));
+        System.out.println("Currency format " + currencyF.format(num));
+        System.out.println("Percentage format " + percentF.format(num));
+        System.out.println("Compact number format " + compactF.format(num));
+
+        numF.setGroupingUsed(false);
+        currencyF.setGroupingUsed(false);
+        percentF.setGroupingUsed(false);
+        compactF.setGroupingUsed(false);
+        System.out.println("Number format (without grouping)" + numF.format(num));
+        System.out.println("Currency format  (without grouping)" + currencyF.format(num));
+        System.out.println("Percentage format  (without grouping)" + percentF.format(num));
+        System.out.println("Compact number format  (without grouping)" + compactF.format(num));
+    }
 
 }
