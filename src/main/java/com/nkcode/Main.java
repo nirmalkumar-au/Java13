@@ -11,7 +11,8 @@ public class Main {
 //        checkBigDecimal();
 //        characterStringSwap();
 //        checkStringBuilder();
-        checkNumberFormat();
+//        checkNumberFormat();
+        displayStringWithFormat();
     }
 
     private static void checkPrimitiveWrapper() {
@@ -98,6 +99,15 @@ public class Main {
         System.out.println("Currency format  (without grouping)" + currencyF.format(num));
         System.out.println("Percentage format  (without grouping)" + percentF.format(num));
         System.out.println("Compact number format  (without grouping)" + compactF.format(num));
+    }
+
+    private static void displayStringWithFormat() {
+        var strFormat = new String("State %s Region: %04d Temperature %(#.02f Celsius");
+        var state = "VIC";
+        var region = 378;
+        var temp = -003.887;
+        var displayFormat = String.format(strFormat, state, region, temp);
+        System.out.println(displayFormat);
     }
 
 }
