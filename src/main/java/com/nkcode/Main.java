@@ -1,5 +1,6 @@
 package com.nkcode;
 
+import java.io.*;
 import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.Locale;
@@ -12,7 +13,8 @@ public class Main {
 //        characterStringSwap();
 //        checkStringBuilder();
 //        checkNumberFormat();
-        displayStringWithFormat();
+//        displayStringWithFormat();
+        checkTryCatchWithResources();
     }
 
     private static void checkPrimitiveWrapper() {
@@ -108,6 +110,26 @@ public class Main {
         var temp = -003.887;
         var displayFormat = String.format(strFormat, state, region, temp);
         System.out.println(displayFormat);
+    }
+
+    private static void checkTryCatchWithResources() {
+        File fileName = new File("Test.txt");
+        if ( !fileName.exists() ) System.out.printf("File %s does not exists  %n", fileName.getName());
+
+        try (
+                FileReader file = new FileReader(fileName);
+                BufferedReader bufferedFile = new BufferedReader(file);
+        ) {
+            String line = bufferedFile.readLine();;
+            while ( line != null &&  !line.isEmpty() ) {
+                System.out.println(line);
+                line = bufferedFile.readLine();
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }
