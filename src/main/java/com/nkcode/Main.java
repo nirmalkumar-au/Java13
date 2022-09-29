@@ -6,10 +6,7 @@ import com.nkcode.model.EmploymentType;
 import java.io.*;
 import java.math.BigDecimal;
 import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 import java.util.stream.Stream;
 
 public class Main {
@@ -23,7 +20,8 @@ public class Main {
 //        displayStringWithFormat();
 //        checkTryCatchWithResources();
 //        displayArrayOfEmployees();
-        displayListOfEmployees();
+//        displayListOfEmployees();
+        displayMapOfEmployees();
     }
 
     private static void checkPrimitiveWrapper() {
@@ -167,5 +165,30 @@ public class Main {
 
         Stream<Employee> employeeStream = employeeList.stream();
         employeeStream.forEach(Employee::displayEmployeeDetails);
+    }
+
+    public static void displayMapOfEmployees() {
+        Map<Integer, Employee> employeeMap = new HashMap<>();
+
+        employeeMap.put( 135,
+                new Employee(
+                "John Davidson",
+                "Williams Swift",
+                135,
+                EmploymentType.FULL_TIME) );
+        employeeMap.put( 1789,
+                new Employee(
+                "Steve Brown",
+                "Jacob Johnson",
+                1789,
+                EmploymentType.PART_TIME) );
+
+        Set<Integer> employeeNumbers = employeeMap.keySet();
+        Employee employee = null;
+        for (Integer employeeNumber: employeeNumbers
+             ) {
+            employee = employeeMap.get(employeeNumber);
+            employee.displayEmployeeDetails();
+        }
     }
 }
