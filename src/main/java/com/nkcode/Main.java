@@ -9,6 +9,14 @@ import java.text.NumberFormat;
 import java.util.*;
 import java.util.stream.Stream;
 
+/*
+Author: Nirmal Kumar
+Hands-on of primitives, wrapper, unsigned wrapper, big decimal, char-string,
+string builder, number formatter, locale, string formatter,
+try catch with resources, file reader, buffered reader, custom class, model,
+enum, array, for each, list, stream, set, and map
+ */
+
 public class Main {
     public static void main(String[] args) {
 //        checkPrimitiveWrapper();
