@@ -6,7 +6,11 @@ import com.nkcode.model.EmploymentType;
 import java.io.*;
 import java.math.BigDecimal;
 import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Locale;
+import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,8 +22,8 @@ public class Main {
 //        checkNumberFormat();
 //        displayStringWithFormat();
 //        checkTryCatchWithResources();
-        displayArrayOfEmployees();
-
+//        displayArrayOfEmployees();
+        displayListOfEmployees();
     }
 
     private static void checkPrimitiveWrapper() {
@@ -147,5 +151,21 @@ public class Main {
              ) {
             employee.displayEmployeeDetails();
         }
+    }
+
+    public static void displayListOfEmployees() {
+        List<Employee> employeeList = new ArrayList<>();
+
+        employeeList.add( new Employee("John Davidson",
+                        "Williams Swift",
+                        135,
+                        EmploymentType.FULL_TIME) );
+        employeeList.add( new Employee("Steve Brown",
+                "Jacob Johnson",
+                1789,
+                EmploymentType.PART_TIME) );
+
+        Stream<Employee> employeeStream = employeeList.stream();
+        employeeStream.forEach(Employee::displayEmployeeDetails);
     }
 }
