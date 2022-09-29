@@ -102,7 +102,7 @@ public class Main {
     }
 
     private static void displayStringWithFormat() {
-        var strFormat = new String("State %s Region: %04d Temperature %(#.02f Celsius");
+        var strFormat = "State %s Region: %04d Temperature %(#.02f Celsius";
         var state = "VIC";
         var region = 378;
         var temp = -003.887;
