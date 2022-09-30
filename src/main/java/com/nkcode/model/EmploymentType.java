@@ -3,7 +3,7 @@ package com.nkcode.model;
 public enum EmploymentType {
     CASUAL("Casual"), FULL_TIME("Full Time"), PART_TIME("Part Time");
 
-    private String description;
+    private final String description;
 
     EmploymentType(String description) {
         this.description = description;

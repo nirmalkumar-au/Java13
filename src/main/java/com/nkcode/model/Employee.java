@@ -46,8 +46,8 @@ public class Employee {
     }
 
     public void displayEmployeeDetails() {
-        String strFormat = new String();
-        System.out.println(strFormat.format("Employee name: %s , %s%n Number: %05d%n Type: %s%n",
+        String strFormat = "";
+        System.out.println(String.format("Employee name: %s , %s%nNumber: %05d%nType: %s%n",
                 lastName, firstName, employeeNumber, employmentType.toString()));
     }
 

@@ -78,8 +78,7 @@ public class EssentialExamples {
         arrChars = strChars.toCharArray();
         System.out.println("Char to String converted " + strChars);
         System.out.print("String to Char converted ");
-        for (char aChar: arrChars
-             ) {
+        for (char aChar: arrChars) {
             System.out.print('\'' );
             System.out.print( aChar );
             System.out.print( '\'');
@@ -133,9 +132,9 @@ public class EssentialExamples {
 
         try (
                 FileReader file = new FileReader(fileName);
-                BufferedReader bufferedFile = new BufferedReader(file);
+                BufferedReader bufferedFile = new BufferedReader(file)
         ) {
-            String line = bufferedFile.readLine();;
+            String line = bufferedFile.readLine();
             while ( line != null &&  !line.isEmpty() ) {
                 System.out.println(line);
                 line = bufferedFile.readLine();
@@ -153,8 +152,7 @@ public class EssentialExamples {
                 new Employee("Steve Brown", "Jacob Johnson", 1789, EmploymentType.PART_TIME)
         };
 
-        for (Employee employee: employees
-             ) {
+        for (Employee employee: employees) {
             employee.displayEmployeeDetails();
         }
     }
@@ -163,9 +161,9 @@ public class EssentialExamples {
         List<Employee> employeeList = new ArrayList<>();
 
         employeeList.add( new Employee("John Davidson",
-                        "Williams Swift",
-                        135,
-                        EmploymentType.FULL_TIME) );
+                "Williams Swift",
+                135,
+                EmploymentType.FULL_TIME) );
         employeeList.add( new Employee("Steve Brown",
                 "Jacob Johnson",
                 1789,
@@ -192,9 +190,8 @@ public class EssentialExamples {
                 EmploymentType.PART_TIME) );
 
         Set<Integer> employeeNumbers = employeeMap.keySet();
-        Employee employee = null;
-        for (Integer employeeNumber: employeeNumbers
-             ) {
+        Employee employee;
+        for (Integer employeeNumber: employeeNumbers) {
             employee = employeeMap.get(employeeNumber);
             employee.displayEmployeeDetails();
         }
