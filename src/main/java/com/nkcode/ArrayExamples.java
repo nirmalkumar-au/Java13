@@ -2,6 +2,10 @@ package com.nkcode;
 
 /*
 Author: Nirmal Kumar
+Reverse each string in an array and print the original array strings and modified array strings
+Used Arrays and Array
+Original string array [civic, radar, repair, done]
+Reversed string array [civic, radar, riaper, enod]
 */
 
 import java.util.Arrays;
