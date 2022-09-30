@@ -11,9 +11,9 @@ import java.util.stream.Stream;
 
 /*
 Author: Nirmal Kumar
-Hands-on of primitives, wrapper, unsigned wrapper, big decimal, char-string,
+Examples of primitives, wrapper, unsigned, big decimal, char-string,
 string builder, number formatter, locale, string formatter,
-try catch with resources, file reader, buffered reader, custom class, model,
+try catch with resources, file reader, buffered reader, custom class,
 enum, array, for each, list, stream, set, and map
  */
 
