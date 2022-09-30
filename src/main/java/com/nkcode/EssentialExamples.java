@@ -17,7 +17,7 @@ try catch with resources, file reader, buffered reader, custom class, model,
 enum, array, for each, list, stream, set, and map
  */
 
-public class Main {
+public class EssentialExamples {
     public static void main(String[] args) {
 //        checkPrimitiveWrapper();
 //        checkUnsignedWrapper();
@@ -89,9 +89,9 @@ public class Main {
     private static void checkStringBuilder() {
         StringBuffer strValue = new StringBuffer();
         strValue.append("Class name is ")
-                .append(Main.class.getCanonicalName())
+                .append(EssentialExamples.class.getCanonicalName())
                 .append("\n Package name ")
-                .append(Main.class.getPackageName());
+                .append(EssentialExamples.class.getPackageName());
         System.out.println(strValue);
     }
 
