@@ -11,9 +11,9 @@ import java.util.stream.Stream;
 
 /*
 Author: Nirmal Kumar
-Examples of primitives, wrapper, unsigned, big decimal, char-string,
+Examples of primitives, wrapper, big decimal, char-string,
 string builder, number formatter, locale, string formatter,
-try catch with resources, file reader, buffered reader, custom class,
+try catch resources, file reader, buffered reader,
 enum, array, for each, list, stream, set, and map
  */
 
@@ -27,8 +27,8 @@ public class EssentialExamples {
 //        checkNumberFormat();
 //        displayStringWithFormat();
 //        checkTryCatchWithResources();
-//        displayArrayOfEmployees();
-//        displayListOfEmployees();
+        displayArrayOfEmployees();
+        displayListOfEmployees();
         displayMapOfEmployees();
     }
 
@@ -153,7 +153,7 @@ public class EssentialExamples {
         };
 
         for (Employee employee: employees) {
-            employee.displayEmployeeDetails();
+            System.out.println(employee);
         }
     }
 
@@ -170,7 +170,7 @@ public class EssentialExamples {
                 EmploymentType.PART_TIME) );
 
         Stream<Employee> employeeStream = employeeList.stream();
-        employeeStream.forEach(Employee::displayEmployeeDetails);
+        employeeStream.forEach(System.out::println);
     }
 
     private static void displayMapOfEmployees() {
@@ -190,10 +190,8 @@ public class EssentialExamples {
                 EmploymentType.PART_TIME) );
 
         Set<Integer> employeeNumbers = employeeMap.keySet();
-        Employee employee;
         for (Integer employeeNumber: employeeNumbers) {
-            employee = employeeMap.get(employeeNumber);
-            employee.displayEmployeeDetails();
+            System.out.println(employeeMap.get(employeeNumber));
         }
     }
 }

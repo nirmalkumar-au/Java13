@@ -45,10 +45,10 @@ public class Employee {
         this.employmentType = employmentType;
     }
 
-    public void displayEmployeeDetails() {
-        String strFormat = "";
-        System.out.println(String.format("Employee name: %s , %s%nNumber: %05d%nType: %s%n",
-                lastName, firstName, employeeNumber, employmentType.toString()));
+    @Override
+    public String toString() {
+        return String.format("Employee name: %s , %s%nNumber: %05d%nType: %s%n",
+                lastName, firstName, employeeNumber, employmentType.toString());
     }
 
 }
